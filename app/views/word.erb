@@ -1,0 +1,15 @@
+<h1>Find Anagrams!</h1>
+
+<% if @new_word %>
+  <p>Estos son anagramas para '<%= @new_word %>':</p>
+  <p># Aqui deberás enlistar todos los anagramas</p>
+  <p><% @words.each do |word|%>
+    '<%= word.canonica%>'
+    <%end%></p>
+<% end %>
+<form action="/new_word" method="post">
+    Dime una palabra:
+    <br>
+    <input type="text" name="user_input">
+    <input type="submit" value="Sacar Anagrama!">
+</form>
